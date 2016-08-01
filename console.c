@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
+#include <sys/select.h>
 
 #include "console.h"
 #include "util.h"
@@ -11,7 +12,6 @@
 #ifndef __MINGW32__
 
 #include <termios.h>
-#include <sys/select.h>
 
 struct console_t {
     int fd; /* Filedescriptor for console, or -1 if disabled */
